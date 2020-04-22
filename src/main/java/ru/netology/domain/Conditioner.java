@@ -1,20 +1,10 @@
 package ru.netology.domain;
 
 public class Conditioner {
-    String name;
     private int maxTemperature;
     private int minTemperature;
     private int currentTemperature;
     private boolean on;
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getMaxTemperature() {
         return maxTemperature;
