@@ -10,7 +10,7 @@ class RadioTest {
     public void prevStationUnderMin() {
         Radio station = new Radio();
 
-        station.setNumberCurrentStation(0);
+        station.setCurrentStation(0);
         station.prevStation();
         int actual = station.getNumberCurrentStation();
         int expected = 9;
@@ -21,7 +21,7 @@ class RadioTest {
     public void prevStationValidValue() {
         Radio station = new Radio();
 
-        station.setNumberCurrentStation(9);
+        station.setCurrentStation(9);
         station.prevStation();
         int actual = station.getNumberCurrentStation();
         int expected = 8;
@@ -32,7 +32,7 @@ class RadioTest {
     public void nextStationValidValue() {
         Radio station = new Radio();
 
-        station.setNumberCurrentStation(0);
+        station.setCurrentStation(0);
         station.nextStation();
         int actual = station.getNumberCurrentStation();
         int expected = 1;
@@ -43,7 +43,7 @@ class RadioTest {
     public void nextStationOverMax() {
         Radio station = new Radio();
 
-        station.setNumberCurrentStation(9);
+        station.setCurrentStation(9);
         station.nextStation();
         int actual = station.getNumberCurrentStation();
         int expected = 0;
@@ -56,7 +56,7 @@ class RadioTest {
     @Test
     public void settingValidStation() {
         Radio station = new Radio();
-        station.settingStation(5);
+        station.setCurrentStation(5);
         int expected = 5;
         int actual = station.getNumberCurrentStation();
         assertEquals(expected, actual);
@@ -65,7 +65,7 @@ class RadioTest {
     @Test
     public void settingOverMaxStation() {
         Radio station = new Radio();
-        station.settingStation(11);
+        station.setCurrentStation(11);
         int expected = 0;
         int actual = station.getNumberCurrentStation();
         assertEquals(expected, actual);
@@ -74,7 +74,7 @@ class RadioTest {
     @Test
     public void settingUnderMinStation() {
         Radio station = new Radio();
-        station.settingStation(-1);
+        station.setCurrentStation(-1);
         int expected = 0;
         int actual = station.getNumberCurrentStation();
         assertEquals(expected, actual);
@@ -92,7 +92,7 @@ class RadioTest {
     @Test
     public void setCurrentVolumeOverMax() {
         Radio volume = new Radio();
-        volume.setCurrentVolume(11);
+        volume.setCurrentVolume(101);
         int expected = 0;
         int actual = volume.getCurrentVolume();
         assertEquals(expected,actual);
@@ -141,10 +141,10 @@ class RadioTest {
     @Test
     public void  increaseCurrentVolumeOverMax() {
         Radio volume = new Radio();
-        volume.setCurrentVolume(10);
+        volume.setCurrentVolume(100);
         volume.increaseCurrentVolume();
         int actual = volume.getCurrentVolume();
-        int expected = 10;
+        int expected = 100;
         assertEquals(expected,actual);
     }
 
